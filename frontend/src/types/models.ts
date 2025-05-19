@@ -1,43 +1,15 @@
 export interface Outfit {
-    head: {
-        price: number
-        name: string
-        urls: string[]
-        color: string
-        reasoning: string
-        description: string
-        type: string
-        category: "clothing" | "accessory" | "shoes"
-    }[],
-    torso: {
-        price: number
-        name: string
-        urls: string[]
-        color: string
-        reasoning: string
-        description: string
-        type: string
-        category: "clothing" | "accessory" | "shoes"
-    }[],
-    legs: {
-        price: number
-        name: string
-        urls: string[]
-        color: string
-        reasoning: string
-        description: string
-        type: string
-        category: "clothing" | "accessory" | "shoes"
-    }[],
-    feet: {
-        price: number
-        name: string
-        urls: string[]
-        color: string
-        reasoning: string
-        description: string
-        type: string
-        category: "clothing" | "accessory" | "shoes"
-    }[],
-  
-  }
+    oufit: OutfitItem[]
+}
+
+export interface OutfitItem {
+    itemId: string
+    name: string
+    color: string
+    reasoning: string
+    description: string
+    type: string
+    brand: string
+    order: number
+    category: "clothing" | "accessory" | "shoes"
+}

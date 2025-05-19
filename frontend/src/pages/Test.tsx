@@ -48,50 +48,22 @@ console.log(response)
         
         <VStack bg={"gray"} w={"80%"} py={5}>
           <Text>AI response</Text>
-          
-          <VStack>
-            <Text textDecor={"underline"} fontWeight={"bold"}>Head</Text>
-            <Text>{response.content?.head?.[0].name}</Text>
-            <Text>{response.content?.head?.[0].price}</Text>
-            <Text>{response.content?.head?.[0].urls?.[0]}</Text>
-            <Text>{response.content?.head?.[0].type}</Text>
-            <Text>{response.content?.head?.[0].color}</Text>
-            <Text>{response.content?.head?.[0].reasoning}</Text>
-            <Text>{response.content?.head?.[0].description}</Text>
-          </VStack>
+          {response.content?.oufit.sort((a, b) => a.order - b.order).map((item) => {
+            return (
+              <VStack borderY={"1px solid black"}>
+                <Text>Name: {item.name}</Text>
+                <Text>Color: {item.color}</Text>
+                <Text>Brand: {item.brand}</Text>
+                <Text>{item.order}</Text>
+                <Text>{item.type}</Text>
+                <Text>{item.color}</Text>
+                <Text>{item.reasoning}</Text>
+                <Text>{item.description}</Text>
+              </VStack>
+            )
+          })}
 
-          <VStack>
-            <Text textDecor={"underline"} fontWeight={"bold"}>Torso</Text>
-            <Text>{response.content?.torso?.[0].name}</Text>
-            <Text>{response.content?.torso?.[0].price}</Text>
-            <Text>{response.content?.torso?.[0].urls?.[0]}</Text>
-            <Text>{response.content?.torso?.[0].type}</Text>
-            <Text>{response.content?.head?.[0].color}</Text>
-            <Text>{response.content?.head?.[0].reasoning}</Text>
-            <Text>{response.content?.head?.[0].description}</Text>
-          </VStack>
 
-          <VStack>
-            <Text textDecor={"underline"} fontWeight={"bold"}>Legs</Text>
-            <Text>{response.content?.legs?.[0].name}</Text>
-            <Text>{response.content?.legs?.[0].price}</Text>
-            <Text>{response.content?.legs?.[0].urls?.[0]}</Text>
-            <Text>{response.content?.legs?.[0].type}</Text>
-            <Text>{response.content?.head?.[0].color}</Text>
-            <Text>{response.content?.head?.[0].reasoning}</Text>
-            <Text>{response.content?.head?.[0].description}</Text>
-          </VStack>
-
-          <VStack>
-            <Text textDecor={"underline"} fontWeight={"bold"}>Feet</Text>
-            <Text>{response.content?.feet?.[0].name}</Text>
-            <Text>{response.content?.feet?.[0].price}</Text>
-            <Text>{response.content?.feet?.[0].urls?.[0]}</Text>
-            <Text>{response.content?.feet?.[0].type}</Text>
-            <Text>{response.content?.head?.[0].color}</Text>
-            <Text>{response.content?.head?.[0].reasoning}</Text>
-            <Text>{response.content?.head?.[0].description}</Text>
-          </VStack>
         </VStack>
       </VStack>
     </>
