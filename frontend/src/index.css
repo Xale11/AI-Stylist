@@ -1,4 +1,10 @@
 :root {
+  --primary: #A6A498;
+  --secondary: #1B1A16;
+  --accent-i: #D7D6D1;
+  --accent-ii: #3A3426;
+  --accent-iii: #D9D9D9;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
